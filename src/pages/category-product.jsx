@@ -9,12 +9,15 @@ export const CategoryProduct = () => {
 
   return (
     <div>
-      <Link to={"/create-product"} className="p-4 bg-yellow-400">
-        Create Product
-      </Link>
+      <div>
+        <Link to={"/create-product"} className="p-4 bg-yellow-400">
+          Create Product
+        </Link>
+      </div>
       {data?.map((item) => (
         <ProductCard key={item.id} {...item} />
       ))}
     </div>
+
   );
 };

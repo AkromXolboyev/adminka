@@ -1,11 +1,13 @@
 import React from "react";
 import { ProductForm } from "../components/product-form";
-import { userCategoryList } from "../service/query/userCategoryList";
+import { useCategoryList } from "../service/query/useCategoryList";
 import { useCreateProduct } from "../service/mutation/useCreateProduct";
 import { useNavigate } from "react-router-dom";
 
 export const CreateProduct = () => {
-  const { data, isLoading } = userCategoryList();
+  const { data, isLoading } = useCategoryList();
+  console.log(data);
+  
   const { mutate } = useCreateProduct();
   const navigate = useNavigate();
   const submit = (data) => {
